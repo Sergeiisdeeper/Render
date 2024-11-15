@@ -1,6 +1,4 @@
-fastapi
-uvicorn
-openai
+
 git add requirements.txt
 git commit -m "Fix requirements.txt"
 git push origin main
