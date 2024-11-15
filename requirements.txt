@@ -1,7 +1,7 @@
 fastapi
 uvicorn
 openai
-git add requirements.txt
+
 git commit -m "Добавлен файл requirements.txt"
 git push origin main
 project/
