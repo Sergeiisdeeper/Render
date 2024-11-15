@@ -1,41 +1,47 @@
 body {
-    background-color: #1e90ff; /* Blue background */
-    color: white;
+    background-image: url('/static/my-background.jpg'); /* Use your photo */
+    background-size: cover; /* Cover the entire screen */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Make it stay fixed during scrolling */
+    color: white; /* Text color */
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    padding: 0;
 }
 
 #chatbox {
-    margin-top: 30px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 10px;
+    width: 50%;
+    max-width: 800px;
+    color: white;
 }
 
 #messages {
-    border: 1px solid #ccc;
-    background-color: white;
-    color: black;
     height: 300px;
     overflow-y: auto;
-    padding: 10px;
+    border: 1px solid white;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent chat area */
     margin-bottom: 10px;
+    padding: 10px;
 }
 
 input {
     width: 70%;
     padding: 10px;
     margin-right: 10px;
+    border: none;
+    border-radius: 5px;
 }
 
 button {
     padding: 10px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Green button */
     color: white;
     border: none;
     border-radius: 5px;
