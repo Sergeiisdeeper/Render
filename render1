@@ -44,3 +44,28 @@ async def chat_with_gpt(websocket: WebSocket):
         )
         reply = response.choices[0].message.content
         await websocket.send_text(reply)
+
+fastapi
+uvicorn
+openai
+body {
+    background-color: #1e90ff; /* Blue background */
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+a {
+    color: yellow;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+git add .
+git commit -m "Update project"
+git push origin main
+
