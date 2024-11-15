@@ -1,2 +1,5 @@
-pip install -r requirements.txt
-uvicorn main:app --host 0.0.0.0 --port 8000
+project/
+├── main.py              # Main application code
+├── requirements.txt     # List of Python dependencies
+└── static/
+    └── style.css        # CSS for your web page
