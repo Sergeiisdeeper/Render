@@ -4,4 +4,8 @@ openai
 git add requirements.txt
 git commit -m "Добавлен файл requirements.txt"
 git push origin main
-
+project/
+├── main.py              # Main application code
+├── requirements.txt     # List of Python dependencies
+└── static/
+    └── style.css        # CSS for your web page
