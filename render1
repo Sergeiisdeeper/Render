@@ -3,3 +3,44 @@ project/
 ├── requirements.txt     # List of Python dependencies
 └── static/
     └── style.css        # CSS for your web page
+from fastapi import FastAPI, WebSocket
+from fastapi.responses import HTMLResponse
+import openai
+import os
+
+# Initialize FastAPI app
+app = FastAPI()
+
+# Load OpenAI API key from environment variable
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# HTML content for the web page
+@app.get("/")
+async def get_home():
+    html_content = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>My GPT Chat</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>Welcome to My GPT Chat</h1>
+        <p>Click <a href="https://example.com" target="_blank">here</a> to visit my page.</p>
+    </body>
+    </html>
+    """
+    return HTMLResponse(content=html_content)
+
+# WebSocket endpoint for real-time GPT interaction
+@app.websocket("/chat")
+async def chat_with_gpt(websocket: WebSocket):
+    await websocket.accept()
+    while True:
+        data = await websocket.receive_text()
+        response = openai.ChatCompletion.create(
+            model="gpt-4",
+            messages=[{"role": "user", "content": data}],
+        )
+        reply = response.choices[0].message.content
+        await websocket.send_text(reply)
